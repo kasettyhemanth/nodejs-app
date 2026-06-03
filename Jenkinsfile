@@ -12,7 +12,7 @@ pipeline {
     }
 
     environment {
-        NODEJS_SERVER_IP = "172.31.39.158"
+        NODEJS_SERVER_IP = "100.31.243.176"
         NODEJS_SERVER_USER = "ec2-user"
         REMOTE_PATH = "/home/ec2-user/nodejs-app"
     }
@@ -25,7 +25,7 @@ pipeline {
         
         stage("Git Clone"){
             steps {
-                git branch: 'main', credentialsId: 'GitHub_Credentials', url: 'https://github.com/Rushi-Technologies/nodejs-app.git'
+                git branch: 'main', credentialsId: 'https://github.com/kasettyhemanth/nodejs-app.git'
             }
         }
         
@@ -89,7 +89,7 @@ pipeline {
                             <p>Check the full console output <a href="${env.BUILD_URL}">here</a>.</p>
                         </div>
                     </body>
-                    </html>''', mimeType: 'text/html', subject: '${env.JOB_NAME} - Build #${env.BUILD_NUMBER} - ${buildStatus}', to: 'balajireddy.urs@gmail.com'
+                    </html>''', mimeType: 'text/html', subject: '${env.JOB_NAME} - Build #${env.BUILD_NUMBER} - ${buildStatus}', to: 'kasetttyhemanth2001@gmail.com'
             }
         }
     }
