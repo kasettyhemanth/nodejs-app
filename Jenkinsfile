@@ -40,10 +40,10 @@ pipeline {
         stage("Copy Files to Remote Server") {
             steps {
              sshagent(['NodeJS_Server_SSH_Cred']) {
-                sh """
+                sh '''
                     ssh -o StrictHostKeyChecking=no  $NODEJS_SERVER_USER@$NODEJS_SERVER_IP "mkdir -p $REMOTE_PATH || true"
                     rsync -avz --exclude=node_modules --exclude=.git ./ $NODEJS_SERVER_USER@$NODEJS_SERVER_IP:$REMOTE_PATH/
-                """
+                '''
               }
             }
         }
