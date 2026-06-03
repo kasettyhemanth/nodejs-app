@@ -18,7 +18,7 @@ pipeline {
     }
 
     tools {
-       nodejs "NodeJS-26.3.0"
+       nodejs "Nodejs-26.3.0"
     }
     
     stages{
