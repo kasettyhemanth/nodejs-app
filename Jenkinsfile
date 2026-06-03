@@ -25,7 +25,9 @@ pipeline {
         
         stage("Git Clone"){
             steps {
-                git branch: 'main', credentialsId: 'https://github.com/kasettyhemanth/nodejs-app.git'
+                git branch: 'main',
+                    credentialsId: 'GitHub_Credentials',
+                    url: 'https://github.com/kasettyhemanth/nodejs-app.git'
             }
         }
         
